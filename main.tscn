@@ -1,0 +1,183 @@
+[gd_scene load_steps=21 format=3 uid="uid://broqh0eamhsem"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_s12eu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5ycjs"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_bottom_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_pjf7l"]
+sky_material = SubResource("ProceduralSkyMaterial_5ycjs")
+
+[sub_resource type="Environment" id="Environment_h41m3"]
+background_mode = 2
+sky = SubResource("Sky_pjf7l")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_agihp"]
+radius = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ud60o"]
+albedo_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_d5egg"]
+material = SubResource("StandardMaterial3D_ud60o")
+radius = 10.0
+height = 20.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a21w5"]
+albedo_color = Color(1, 0.419608, 0.607843, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_qjjq4"]
+material = SubResource("StandardMaterial3D_a21w5")
+
+[sub_resource type="MultiMesh" id="MultiMesh_e7qnr"]
+transform_format = 1
+instance_count = 35
+mesh = SubResource("PrismMesh_qjjq4")
+buffer = PackedFloat32Array(-0.0237417, -0.772119, 0.750796, -7.5636, 1.069, -0.108096, -0.0773618, -1.19596, 0.130789, 0.743353, 0.7686, 6.40853, -0.14674, 0.831072, 0.347126, 8.91349, -0.0271106, 0.347468, -0.843351, 4.27905, -0.900246, -0.145928, -0.0311842, -1.3905, 0.297291, 0.880325, -0.500962, 8.82917, 0.980455, -0.381164, -0.0879656, -2.77788, -0.254247, -0.440521, -0.924995, -3.74622, -0.774514, 0.208297, 0.724724, 2.8609, -0.731634, -0.45909, -0.649948, -4.65933, 0.182551, -0.956208, 0.469922, -8.34947, -0.705049, -0.610072, 0.109641, -7.5771, -0.0412421, -0.119516, -0.930225, -0.899883, 0.618473, -0.703442, 0.0629586, -6.43562, 0.650581, -0.601976, 0.17221, -7.04662, 0.587576, 0.501187, -0.467817, 5.26987, 0.216301, 0.449136, 0.752846, 4.7284, 0.575607, -0.792544, -0.266598, -7.60445, 0.758917, 0.359272, 0.570519, 2.70765, -0.351063, -0.522802, 0.796214, -5.86837, 1.00312, -0.0648101, -0.0535927, -0.218181, -0.0416756, 0.174094, -0.990599, 0.558043, 0.0730457, 0.989355, 0.170802, 9.97012, 0.729317, -0.129642, -0.616438, -1.15415, -0.550882, 0.326109, -0.720339, 3.27932, 0.305504, 0.897526, 0.172689, 9.36721, 0.859806, 0.0795099, 0.251278, 0.442233, 0.116694, 0.653925, -0.606212, 6.69721, -0.236315, 0.6122, 0.614895, 7.39407, -0.704218, -0.223675, 0.583951, -3.46116, -0.625122, 0.274096, -0.64888, 2.04367, -0.0158428, -0.872808, -0.353423, -9.13482, -0.662582, 0.631569, -0.399295, 6.54097, 0.0759925, -0.473947, -0.875746, -4.65331, -0.743331, -0.611414, 0.26639, -5.92923, -0.213369, -0.656776, 0.677452, -5.28538, 0.14514, -0.709136, -0.64178, -8.3468, 0.932325, -0.0399125, 0.254949, -1.50239, -0.78022, 0.00788349, 0.534471, 0.726443, -0.423388, 0.568136, -0.626441, 7.14508, -0.326288, -0.756058, -0.465163, -6.94896, -0.630129, -0.628665, -0.254435, -7.29986, 0.287888, 0.0665191, -0.877334, 1.43967, 0.614066, -0.676295, 0.150223, -6.66252, -0.302079, -0.160284, -0.908786, -1.29504, 0.110752, -0.955623, 0.131731, -9.88622, -0.916142, -0.0626747, 0.315578, -0.595268, 0.896322, -0.347595, -0.532645, -2.44691, 0.528804, 0.918694, 0.290334, 8.27587, 0.353411, -0.493057, 0.916472, -5.02808, 0.219021, -0.673471, 0.689428, -6.82502, 0.830064, 0.491091, 0.216026, 5.69896, -0.489763, 0.53114, 0.674438, 4.56487, -0.725732, 0.287751, -0.567407, 2.8127, 0.173406, -0.738692, -0.596407, -8.34493, -0.612112, -0.550428, 0.503771, -4.72021, -0.182699, -0.985743, 0.0280567, -9.87907, -0.345118, 0.0371833, -0.940939, 0.546059, 0.92378, -0.181063, -0.345979, -1.34803, 0.155149, -0.105412, -0.931385, -0.221149, 0.831313, -0.420655, 0.186088, -3.58664, -0.433022, -0.84534, 0.0235406, -9.31266, 1.02112, 0.352722, 0.186568, 3.95796, 0.33501, -1.03629, 0.125614, -9.00113, 0.216767, -0.0599875, -1.07299, -1.75945, -0.167266, -0.726986, 0.697294, -6.43708, 0.395478, -0.697482, -0.632315, -7.62459, 0.926458, 0.166482, 0.395809, 0.341431, 0.267468, 0.789811, -0.606758, 7.84983, -0.212565, -0.568513, -0.833729, -4.35812, -0.973022, 0.341303, 0.0153472, 4.37133, 0.729501, -0.350133, -0.421121, -3.64223, 0.547262, 0.492916, 0.538188, 5.56052, 0.0209821, -0.683044, 0.60425, -7.44784, -0.384357, -0.112807, -0.95957, -0.907444, 0.616852, 0.766193, -0.337154, 7.70344, 0.743636, -0.693868, -0.216293, -6.29011, -0.863486, -0.332032, -0.209349, -4.50443, -0.270068, 0.869665, -0.265376, 8.45434, 0.284842, -0.181979, -0.886244, -2.84758, 1.04728, -0.0765543, 0.360442, 0.339239, 0.171355, -0.860244, -0.680586, -8.18594, 0.326216, 0.697638, -0.799664, 5.7079, 0.21424, -0.00398514, -0.874076, -0.6642, 0.431835, 0.782932, 0.102275, 7.99415, 0.759963, -0.443763, 0.188293, -5.95365, 0.487926, 0.734121, -0.631041, 5.93865, 0.709826, 0.209198, 0.792213, 2.90637, 0.65825, -0.769753, -0.386528, -7.4798, -0.227859, -0.40346, 0.929943, -4.17995, -0.39913, -0.840446, -0.462428, -7.74715, 0.93181, -0.458655, 0.0293269, -4.72057, 0.2778, 0.0729532, 1.002, 0.666785, 0.0166314, 1.03913, -0.0802671, 9.96817, -1.00452, 0.0373797, 0.275776, 0.0232721, -0.853912, 0.27583, -0.241776, 3.06226, -0.162506, -0.83369, -0.37717, -8.8756, -0.32883, -0.304275, 0.814243, -3.43129, -0.269007, -0.966021, 0.43806, -9.08117, 0.810807, 0.1041, 0.72747, -0.0700529, -0.683874, 0.503413, 0.69018, 4.13359, -0.0367203, -0.693825, 0.618611, -7.86952, 0.779035, 0.314781, 0.399297, 3.92605, -0.507126, 0.533798, 0.568598, 4.72018)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b67qb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0al0"]
+albedo_color = Color(0.262745, 0.666667, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_22ktp"]
+material = SubResource("StandardMaterial3D_r0al0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqnp3"]
+albedo_color = Color(1, 0.270588, 0.164706, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_62bth"]
+material = SubResource("StandardMaterial3D_jqnp3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yf0t2"]
+albedo_color = Color(0.709804, 1, 0.160784, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7qpn8"]
+material = SubResource("StandardMaterial3D_yf0t2")
+
+[sub_resource type="Animation" id="Animation_2ofqg"]
+resource_name = "Move"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(6.28319, 6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0163w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.523599, 1.1781, 0.654498)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dspqs"]
+_data = {
+"Move": SubResource("Animation_2ofqg"),
+"RESET": SubResource("Animation_0163w")
+}
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h41m3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_agihp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("SphereMesh_d5egg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.969612, -0.244647, 0, 0.244647, 0.969612, 0, 0, 0, 1, -2.43567, 10.1426, 0)
+mesh = SubResource("PrismMesh_qjjq4")
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="StaticBody3D"]
+multimesh = SubResource("MultiMesh_e7qnr")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+script = ExtResource("1_s12eu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_b67qb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_22ktp")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 4.85189, 3.47475)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(0.345, 0, 0, 0, -1.50804e-08, 0.345, 0, -0.345, -1.50804e-08, 0, 1.36946, -1.05246)
+mesh = SubResource("PrismMesh_62bth")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(0.584814, 0.133519, 0.800103, 0.527203, 0.687064, -0.5, -0.616481, 0.714224, 0.331414, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 5.96046e-08, 2.98023e-08, 1, 5.96046e-08, 5.96046e-08, 0, 1, 0.00662518, -0.628327, 10.9441)
+mesh = SubResource("SphereMesh_7qpn8")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pivot"]
+libraries = {
+"": SubResource("AnimationLibrary_dspqs")
+}
+autoplay = "Move"
+
+[node name="Pivot2" type="Node3D" parent="."]
+transform = Transform3D(0.584814, 0.133519, 0.800103, 0.527203, 0.687064, -0.5, -0.616481, 0.714224, 0.331414, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0938, -0.651, 0)
+mesh = SubResource("SphereMesh_7qpn8")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pivot2"]
+libraries = {
+"": SubResource("AnimationLibrary_dspqs")
+}
+autoplay = "Move"
+
+[node name="Pivot3" type="Node3D" parent="."]
+transform = Transform3D(0.584814, 0.133519, 0.800103, 0.527203, 0.687064, -0.5, -0.616481, 0.714224, 0.331414, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.0667, 0)
+mesh = SubResource("SphereMesh_7qpn8")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pivot3"]
+libraries = {
+"": SubResource("AnimationLibrary_dspqs")
+}
+autoplay = "Move"
